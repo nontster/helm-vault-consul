@@ -1,0 +1,25 @@
+# Choose an optional name for the datacenter
+global:
+  datacenter: dc1
+
+# Enable the Consul Web UI via a NodePort
+ui:
+  service:
+    type: 'NodePort'
+
+# Enable Connect for secure communication between nodes
+connectInject:
+  enabled: true
+# Enable CRD Controller
+controller:
+  enabled: true
+
+client:
+  enabled: true
+
+server:
+  replicas: 1
+  bootstrapExpect: 1
+  disruptionBudget:
+    enabled: true
+    maxUnavailable: 0
